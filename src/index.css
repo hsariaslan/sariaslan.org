@@ -1,3 +1,172 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    @apply bg-stone-100;
+}
+
+/* logo begin */
+.logo-container {
+    @apply relative flex items-center justify-center w-[260px] h-[80px] mx-auto overflow-hidden;
+}
+
+.logo-container img {
+    @apply block w-[250px] h-auto;
+    transition: transform 0.3s ease;
+}
+
+.glow-effect {
+    @apply absolute top-0 left-0 w-full h-full opacity-0 pointer-events-none;
+    background: linear-gradient(45deg, transparent 0%, white 50%, transparent 100%);
+    transform: translate(-100%, 100%);
+    transition: opacity 0.3s ease;
+}
+
+.logo-container:hover .glow-effect {
+    @apply opacity-100;
+    animation: slide-glow 0.5s ease forwards;
+}
+
+.logo-container:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes slide-glow {
+    from {
+        transform: translate(-100%, 100%);
+    }
+    to {
+        transform: translate(100%, -100%);
+    }
+}
+/* logo end */
+
+/* menu begin */
+@keyframes confettiMove {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--x-distance), var(--y-distance)) rotate(var(--rotation));
+    }
+}
+
+@keyframes bounceInFade {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceOutFade {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    @apply absolute w-[2px] h-[10px] opacity-0;
+    animation: confettiMove 0.8s ease-out forwards;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+}
+
+.menu-item {
+    @apply relative flex items-center hover:text-primary transition-all gap-x-2;
+}
+
+.menu-item-icon {
+    @apply opacity-0;
+}
+
+.menu-item.show-icon .menu-item-icon {
+    @apply block;
+    animation: bounceInFade 0.5s ease forwards;
+}
+
+.menu-item.hide-icon .menu-item-icon {
+    @apply block;
+    animation: bounceOutFade 0.5s ease forwards;
+}
+/* menu end */
+
+/* profile photo begin */
+.profile-photo-wrapper {
+    @apply relative inline-block w-64 h-64
+}
+
+.profile-photo-container {
+    @apply w-full h-full rounded-full overflow-hidden relative flex items-center justify-center z-[2];
+    box-shadow: 0 0 15px rgba(102, 102, 102, 0.7), 0 0 30px rgba(102, 102, 102, 0.7), 0 0 45px rgba(102, 102, 102, 0.7);
+}
+
+.profile-photo {
+    @apply w-full h-full object-cover;
+    filter: grayscale(100%);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.profile-photo-wrapper:hover .profile-photo {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+.neon-sine-wave {
+    @apply absolute -top-[5px] -left-[5px] rounded-full z-[1] pointer-events-none;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+}
+
+.neon-sine-wave::before, .neon-sine-wave::after {
+    @apply absolute top-1/2 left-1/2 w-full h-full rounded-full origin-center;
+    content: '';
+    background: linear-gradient(90deg, rgba(120, 120, 120, 0.5) 25%, transparent 25%, transparent 75%, rgba(120, 120, 120, 0.5) 75%);
+    animation: wave-animation 6s linear infinite;
+    box-shadow: 0 0 10px rgba(120, 120, 120, 0.5), 0 0 20px rgba(120, 120, 120, 0.5), 0 0 30px rgba(120, 120, 120, 0.5);
+    transition: all;
+}
+
+.neon-sine-wave::after {
+    animation-delay: -3s;
+}
+
+.profile-photo-wrapper:hover .neon-sine-wave::before,
+.profile-photo-wrapper:hover .neon-sine-wave::after {
+    background: linear-gradient(90deg, rgba(253, 139, 0, 0.5) 25%, transparent 25%, transparent 75%, rgba(253, 139, 0, 0.5) 75%);
+    box-shadow: 0 0 10px rgba(253, 139, 0, 0.5), 0 0 20px rgba(253, 139, 0, 0.5), 0 0 30px rgba(253, 139, 0, 0.5);
+}
+.profile-photo-wrapper:hover .profile-photo-container {
+    box-shadow: none;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes wave-animation-reverse {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg) scale(1);
+    }
+}
+/* profile photo end */
