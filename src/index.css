@@ -103,6 +103,93 @@ body {
 }
 /* menu end */
 
+/* burger menu start */
+.burger-button {
+    @apply relative overflow-hidden;
+}
+
+.burger-button::after {
+    @apply absolute top-1/2 left-1/2 w-[200%] h-[200%] rounded-full opacity-0;
+    content: '';
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.burger-button:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.burger-icon-wrapper {
+    @apply w-8 h-6 cursor-pointer
+}
+
+.burger-icon {
+    @apply w-full h-0.5 bg-white;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.burger-icon:nth-child(2) {
+    transition-delay: 0.025s; /* Slight delay for middle line */
+}
+
+.burger-icon.open:nth-child(1) {
+    transform: rotate(45deg) translateX(6px) translateY(8px);
+    transition-delay: 0.1s; /* Wait for middle line to fade out */
+}
+
+.burger-icon.open:nth-child(2) {
+    opacity: 0;
+    transition-delay: 0s; /* Fade out middle line first */
+}
+
+.burger-icon.open:nth-child(3) {
+    transform: rotate(-45deg) translateX(6px) translateY(-8px);
+    transition-delay: 0.1s; /* Wait for middle line to fade out */
+}
+
+.burger-icon:not(.open):nth-child(1) {
+    transform: rotate(0) translateX(0) translateY(0);
+    transition-delay: 0s; /* Wait for lines to return before middle fades in */
+}
+
+.burger-icon:not(.open):nth-child(2) {
+    opacity: 1;
+    transition-delay: 0.2s; /* Fade in middle line last */
+}
+
+.burger-icon:not(.open):nth-child(3) {
+    transform: rotate(0) translateX(0) translateY(0);
+    transition-delay: 0s; /* Wait for lines to return before middle fades in */
+}
+/* burger menu end */
+
+/* responsive link hover effect start */
+nav .link-effect {
+    @apply relative inline-block;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav .link-effect:hover {
+    @apply text-primary;
+}
+
+nav .link-effect::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary;
+    content: '';
+    border-bottom: 2px dashed rgb(253, 139, 0);
+    transition: width 0.3s ease;
+}
+
+nav .link-effect:hover::after {
+    width: 100%;
+}
+/* responsive link hover effect end */
+
 /* profile photo begin */
 .profile-photo-wrapper {
     @apply relative inline-block w-64 h-64
