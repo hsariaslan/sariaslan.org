@@ -49,8 +49,8 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems}) => {
             >
                 <nav className="p-4 flex flex-col gap-y-4">
                     {menuItems.map((item, index) => (
-                        <div className="block">
-                            <Link to={item.link} key={index} className="block text-gray-700 link-effect">
+                        <div className="block" key={index}>
+                            <Link to={item.link} className="block text-gray-700 link-effect">
                                 {item.text}
                             </Link>
                         </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {AiFillExperiment} from "react-icons/ai";
-import {FaFileCode, FaGraduationCap, FaHome, FaInfoCircle, FaPhone, FaStar} from "react-icons/fa";
+import {FaFileCode, FaGraduationCap, FaHome, FaInfoCircle, FaPhone} from "react-icons/fa";
+import {HiPencilSquare} from "react-icons/hi2";
 import BurgerMenu from "@/components/BurgerMenu";
 import ConfettiMenu from "@/components/ConfettiMenu";
 
@@ -23,11 +24,6 @@ const menuItems: IMenuItemsProps[] = [
         icon: <FaInfoCircle className="menu-item-icon" size={20}/>,
     },
     {
-        link: '/#skills',
-        text: 'Skills',
-        icon: <FaStar className="menu-item-icon" size={20}/>,
-    },
-    {
         link: '/#experiences',
         text: 'Experiences',
         icon: <AiFillExperiment className="menu-item-icon" size={20}/>,
@@ -41,6 +37,11 @@ const menuItems: IMenuItemsProps[] = [
         link: '/#projects',
         text: 'Projects',
         icon: <FaFileCode className="menu-item-icon" size={20}/>,
+    },
+    {
+        link: '/#blog',
+        text: 'Blog',
+        icon: <HiPencilSquare className="menu-item-icon" size={20}/>,
     },
     {
         link: '/#contact',
