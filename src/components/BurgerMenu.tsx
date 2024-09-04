@@ -43,11 +43,11 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems}) => {
             </button>
 
             <div
-                className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                className={`fixed top-0 right-0 h-full pt-10 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
             >
-                <nav className="p-4 flex flex-col gap-y-4">
+                <nav className="p-4 flex flex-col gap-y-6">
                     {menuItems.map((item, index) => (
                         <div className="block" key={index}>
                             <Link to={item.link} className="block text-gray-700 link-effect">

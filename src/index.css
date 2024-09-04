@@ -298,3 +298,17 @@ nav .link-effect:hover::after {
     }
 }
 /* download button end */
+
+.home-bottom {
+    @apply mt-24;
+}
+
+@media (min-height: 900px) {
+    .home-bottom {
+        @apply xl:absolute xl:bottom-24 xl:w-full xl:mt-0;
+    }
+}
+
+.techs {
+    @apply flex gap-1 sm:gap-2 mt-2 items-center max-w-full;
+}

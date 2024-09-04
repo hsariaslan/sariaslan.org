@@ -52,7 +52,7 @@ const menuItems: IMenuItemsProps[] = [
 
 const Header = () => {
     return (
-        <header className="py-6 px-10 flex justify-between bg-white">
+        <header className="py-6 px-1 sm:px-10 flex justify-between bg-white">
             <Link to="/#home">
                 <div className="logo-container">
                     <img src="src/assets/images/logo.png" alt="hakan-sariaslan-logo" width="250"/>

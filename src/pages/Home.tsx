@@ -18,7 +18,7 @@ function Home() {
     return (
         <>
             <Header/>
-            <div className="mt-32 mx-auto xl:w-2/3 w-full flex justify-around items-center gap-x-10">
+            <div className="mt-10 mx-auto 2xl:w-2/3 w-full flex flex-col-reverse md:flex-row md:mt-24 gap-y-10 justify-around items-center gap-x-10">
                 <div className="flex flex-col gap-y-4">
                     <div className="text-6xl flex gap-x-4">
                         <span>Fullstack Web Engineer</span>
@@ -45,12 +45,12 @@ function Home() {
                     <img src="src/assets/images/profile.jpeg" alt="hakan-sariaslan" className="profile-photo"/>
                 </div>
             </div>
-            <div className="mt-40 xl:w-2/3 w-full mx-auto">
+            <div className="home-bottom">
                 <div className="text-center text-4xl font-light">Tech Stack</div>
-                <div className="flex justify-around items-center mt-12">
+                <div className="flex flex-col text-center justify-center gap-y-10 xl:flex-row xl:justify-around items-center mt-12">
                     <div>
                         <div className="text-2xl font-light">Languages</div>
-                        <div className="flex gap-2 mt-2 items-center">
+                        <div className="techs">
                             <SiPhp size={logoSize} title="PHP"/>
                             <RiJavascriptFill size={logoSize} title="Javascript"/>
                             <BiLogoTypescript size={logoSize} title="Typescript"/>
@@ -60,7 +60,7 @@ function Home() {
                     </div>
                     <div>
                         <div className="text-2xl font-light">Libraries / Frameworks</div>
-                        <div className="flex gap-2 mt-2 items-center">
+                        <div className="techs flex-wrap">
                             <IoLogoLaravel size={logoSize} title="Laravel"/>
                             <RiReactjsLine size={logoSize} title="React JS"/>
                             <RiTailwindCssFill size={logoSize} title="TailwindCSS"/>
@@ -73,7 +73,7 @@ function Home() {
                     </div>
                     <div>
                         <div className="text-2xl font-light">Databases</div>
-                        <div className="flex gap-2 mt-2 items-center">
+                        <div className="techs">
                             <GrMysql size={logoSize - 8} title="Mysql"/>
                             <DiRedis size={logoSize} title="Redis"/>
                             <SiMongodb size={logoSize} title="MongoDB"/>
@@ -81,7 +81,7 @@ function Home() {
                     </div>
                     <div>
                         <div className="text-2xl font-light">DevOps Tools</div>
-                        <div className="flex gap-2 mt-2 items-center">
+                        <div className="techs">
                             <FaDocker size={logoSize} title="Docker"/>
                             <FaAws size={logoSize} title="AWS"/>
                             <FaAtlassian size={logoSize - 8} title="Atlassian"/>
