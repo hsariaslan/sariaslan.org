@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css";
 import {Link} from "react-router-dom";
 import {FaAws, FaAtlassian, FaCss3Alt, FaDocker, FaGithub, FaHtml5, FaLinkedin, FaVuejs} from "react-icons/fa";
 import {SiPhp} from "react-icons/si";
@@ -10,14 +11,12 @@ import {DiJqueryLogo, DiRedis, DiYii} from "react-icons/di";
 import {SiMongodb} from "react-icons/si";
 import {TbBrandNodejs} from "react-icons/tb";
 import {SiExpress} from "react-icons/si";
-import Header from "../components/Header";
 
 function Home() {
     const logoSize = 48;
 
     return (
         <>
-            <Header/>
             <div className="mt-10 mx-auto 2xl:w-2/3 w-full flex flex-col-reverse md:flex-row md:mt-24 gap-y-10 justify-around items-center gap-x-10">
                 <div className="flex flex-col gap-y-4">
                     <div className="text-6xl flex gap-x-4">
@@ -28,7 +27,7 @@ function Home() {
                     </div>
                     <div className="mt-20 flex items-center gap-x-4">
                         <div className="download-button-container">
-                            <a href="src/assets/resume-hakan-sariaslan.pdf" target="_blank" className="download-button">Download CV</a>
+                            <a href="src/assets/pdf/resume-hakan-sariaslan.pdf" target="_blank" className="download-button">Download CV</a>
                         </div>
                         <div className="flex gap-x-2">
                             <Link to="https://www.linkedin.com/in/hakan-sariaslan/" target="_blank" title="LinkedIn">

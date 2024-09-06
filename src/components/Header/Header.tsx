@@ -1,10 +1,11 @@
 import React from "react";
+import "./Header.css";
 import {Link} from "react-router-dom";
 import {AiFillExperiment} from "react-icons/ai";
 import {FaFileCode, FaGraduationCap, FaHome, FaInfoCircle, FaPhone} from "react-icons/fa";
 import {HiPencilSquare} from "react-icons/hi2";
-import BurgerMenu from "@/components/BurgerMenu";
-import ConfettiMenu from "@/components/ConfettiMenu";
+import BurgerMenu from "@/components/Header/BurgerMenu";
+import ConfettiMenu from "@/components/Header/ConfettiMenu";
 
 interface IMenuItemsProps {
     link: string;

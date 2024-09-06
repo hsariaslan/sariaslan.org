@@ -1,0 +1,104 @@
+/* profile photo v2 start */
+.photo-wrapper {
+    @apply relative w-80 h-80 min-w-80 flex justify-center items-center rounded-full;
+}
+
+.profile-photo {
+    @apply w-full h-full rounded-full;
+    border: 5px solid rgb(253, 139, 0);
+    animation: slime 8s ease-in-out infinite;
+}
+
+.slime-border {
+    @apply absolute top-0 left-0 w-full h-full;
+}
+
+@keyframes slime {
+    0% {
+        border-radius: 65% 45% 25% 70% / 65% 25% 70% 35%;
+    }
+
+    25% {
+        border-radius: 55% 50% 30% 75% / 65% 25% 70% 35%;
+    }
+
+    50% {
+        border-radius: 45% 55% 60% 40% / 50% 60% 25% 60%;
+    }
+
+    75% {
+        border-radius: 55% 50% 70% 35% / 50% 60% 25% 60%;
+    }
+
+    100% {
+        border-radius: 65% 45% 25% 70% / 65% 25% 70% 35%;
+    }
+}
+/* profile photo v2 end */
+
+/* download button begin */
+.download-button-container {
+    @apply w-52;
+}
+
+.download-button {
+    @apply cursor-pointer py-2 bg-primary text-stone-50 w-full h-full text-center relative rounded-full block text-2xl font-light;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.download-button:before, .download-button:after {
+    @apply absolute w-full h-full bg-red-500 top-1/2 left-1/2 z-[-1] p-1 rounded-full opacity-0 transition-all;
+    content: '';
+    translate: -50% -50%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #FD8B00, #006aff, #ff0095, #ff4545);
+    box-sizing: initial;
+    animation: 3s spin linear infinite;
+
+}
+
+.download-button:before {
+    filter: blur(1.5rem);
+    opacity: 0;
+}
+
+.download-button-container:hover .download-button {
+    @apply bg-stone-100 text-primary;
+}
+
+.download-button-container:hover .download-button:before {
+    opacity: 0.5;
+}
+
+.download-button-container:hover .download-button:after {
+    opacity: 1;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+
+    to {
+        --angle: 360deg;
+    }
+}
+/* download button end */
+
+.home-bottom {
+    @apply mt-24;
+}
+
+@media (min-height: 900px) {
+    .home-bottom {
+        @apply xl:absolute xl:bottom-24 xl:w-full xl:mt-0;
+    }
+}
+
+.techs {
+    @apply flex gap-1 sm:gap-2 mt-2 items-center max-w-full;
+}
