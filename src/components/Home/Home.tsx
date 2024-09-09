@@ -16,8 +16,8 @@ function Home() {
     const logoSize = 48;
 
     return (
-        <>
-            <div className="mt-10 mx-auto 2xl:w-2/3 w-full flex flex-col-reverse md:flex-row md:mt-24 gap-y-10 justify-around items-center gap-x-10">
+        <div className="home pt-10 md:pt-24">
+            <div className="mx-auto 2xl:w-2/3 w-full flex flex-col-reverse md:flex-row gap-y-10 justify-around items-center gap-x-10">
                 <div className="flex flex-col gap-y-4">
                     <div className="text-6xl flex gap-x-4">
                         <span>Fullstack Web Engineer</span>
@@ -75,7 +75,7 @@ function Home() {
                         <div className="techs">
                             <GrMysql size={logoSize - 8} title="Mysql"/>
                             <DiRedis size={logoSize} title="Redis"/>
-                            <SiMongodb size={logoSize} title="MongoDB"/>
+                            <SiMongodb size={logoSize - 8} title="MongoDB"/>
                         </div>
                     </div>
                     <div>
@@ -88,7 +88,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

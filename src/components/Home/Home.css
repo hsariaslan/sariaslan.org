@@ -1,3 +1,7 @@
+.home {
+    min-height: calc(100vh - 128px);
+}
+
 /* profile photo v2 start */
 .photo-wrapper {
     @apply relative w-80 h-80 min-w-80 flex justify-center items-center rounded-full;
