@@ -17,7 +17,7 @@ function About() {
                         intuitive user interface, my goal is always to deliver high-quality, scalable solutions that meet
                         the needs of both clients and users alike.
                     </p>
-                    <img src="src/assets/images/profile.jpeg" className="rounded-lg block max-h-[250px] mx-auto mt-4" alt="hakan-sariaslan" />
+                    <img src="src/assets/images/paris.jpg" className="rounded-lg block max-h-[288px] mx-auto mt-8" alt="hakan-sariaslan" />
                 </div>
             </div>
         </div>
