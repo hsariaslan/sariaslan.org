@@ -1,9 +1,8 @@
 import React from "react";
-import "./About.css";
 
 function About() {
     return (
-        <div className="bg-white sm:p-10 py-10 mt-10">
+        <div className="bg-white py-20 mt-10">
             <div id="about" className="sm:pl-10 px-4 mx-auto 2xl:w-2/3 w-full">
                 <h1 className="text-4xl font-light">About Me</h1>
                 <div className="flex flex-col-reverse lg:flex-row gap-x-20">
