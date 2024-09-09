@@ -1,6 +1,7 @@
 import React from "react";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import "./Timeline.css";
 import { MdOutlineWork } from "react-icons/md";
 import { FaGraduationCap } from "react-icons/fa";
 
@@ -44,7 +45,7 @@ function Timeline() {
                         iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
                         icon={<FaGraduationCap/>}
                     >
-                        <h3 className="vertical-timeline-element-title text-2xl font-bold">Graduation as Software Engineer (BS)</h3>
+                        <h3 className="vertical-timeline-element-title text-2xl font-bold">Graduated as Software Engineer (BS)</h3>
                         <h4 className="vertical-timeline-element-subtitle text-lg">Firat University</h4>
                         <h5 className="vertical-timeline-element-subtitle">Elazig, Turkey</h5>
                     </VerticalTimelineElement>
@@ -100,7 +101,7 @@ function Timeline() {
                         iconStyle={{background: 'rgb(33, 150, 243)', color: '#fff'}}
                         icon={<FaGraduationCap/>}
                     >
-                        <h3 className="vertical-timeline-element-title text-2xl font-bold">Graduation as Computer Programmer (AS)</h3>
+                        <h3 className="vertical-timeline-element-title text-2xl font-bold">Graduated as Computer Programmer (AS)</h3>
                         <h4 className="vertical-timeline-element-subtitle text-lg">Pamukkale University</h4>
                         <h5 className="vertical-timeline-element-subtitle">Denizli, Turkey</h5>
                     </VerticalTimelineElement>

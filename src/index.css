@@ -25,5 +25,5 @@ html {
 }
 
 body {
-    @apply bg-stone-100 font-[Roboto];
+    @apply bg-stone-100 font-[Roboto] overflow-x-hidden;
 }
