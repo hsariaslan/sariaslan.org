@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Link} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
+import {HashLink} from 'react-router-hash-link';
 
 interface IMenuItemsProps {
     link: string;
@@ -8,9 +8,11 @@ interface IMenuItemsProps {
 
 interface BurgerMenuProps {
     menuItems: IMenuItemsProps[];
+    onLinkClick: (href: string) => void;
+    isVisible: boolean;
 }
 
-const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems}) => {
+const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems, onLinkClick, isVisible}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [iconTransform, setIconTransform] = useState(false);
 
@@ -28,6 +30,18 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems}) => {
         }
     };
 
+    const handleScroll = () => {
+        setIsOpen(false);
+        setIconTransform(false);
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
+
     return (
         <div className="xl:hidden fixed z-50 right-10">
             <button
@@ -43,16 +57,18 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems}) => {
             </button>
 
             <div
-                className={`fixed top-0 right-0 h-full pt-10 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+                className={`burger-menu fixed top-0 right-0 h-screen pt-10 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
+                } ${
+                    isVisible ? 'translate-y-0' : 'translate-y-32'
                 }`}
             >
                 <nav className="p-4 flex flex-col gap-y-6">
                     {menuItems.map((item, index) => (
                         <div className="block" key={index}>
-                            <Link to={item.link} className="block text-gray-700 link-effect">
+                            <HashLink to={item.link} className="block text-gray-700 link-effect" onClick={(e) => onLinkClick(item.link)}>
                                 {item.text}
-                            </Link>
+                            </HashLink>
                         </div>
                     ))}
                 </nav>

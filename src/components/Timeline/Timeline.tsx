@@ -8,7 +8,7 @@ import { FaGraduationCap } from "react-icons/fa";
 function Timeline() {
     return (
         <div>
-            <div id="experiences" className="sm:pl-10 py-10 mx-auto 2xl:w-2/3 w-full">
+            <div id="timeline" className="sm:pl-10 py-10 mx-auto 2xl:w-2/3 w-full">
                 <VerticalTimeline>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"

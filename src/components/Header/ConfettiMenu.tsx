@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
 import React from "react";
+import {HashLink} from 'react-router-hash-link';
 
 interface IMenuItemsProps {
     link: string;
@@ -9,11 +9,12 @@ interface IMenuItemsProps {
 
 interface ConfettiMenuProps {
     menuItems: IMenuItemsProps[];
+    onLinkClick: (href: string) => void;
 }
 
 const confettiColors: string[] = ['#FF6F61', '#6B5B95', '#88B04B', '#F7CAC9', '#92A8D1', '#955251', '#B565A7', '#009B77', '#DD4124', '#45B8AC'];
 
-const ConfettiMenu: React.FC<ConfettiMenuProps> = ({menuItems}) => {
+const ConfettiMenu: React.FC<ConfettiMenuProps> = ({menuItems, onLinkClick}) => {
     const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         const item = e.currentTarget;
         item.classList.add('show-icon');
@@ -77,13 +78,13 @@ const ConfettiMenu: React.FC<ConfettiMenuProps> = ({menuItems}) => {
         <nav className="hidden xl:flex items-center justify-between gap-x-4 2xl:gap-x-6 text-2xl">
             {menuItems.map((menuItem, index) => {
                 return (
-                    <Link to={menuItem.link} key={index} className="menu-item" onMouseEnter={handleMouseEnter}
+                    <HashLink to={menuItem.link} key={index} className="menu-item" onMouseEnter={handleMouseEnter} onClick={(e) => onLinkClick(menuItem.link)}
                           onMouseLeave={handleMouseLeave}>
                         <div className="w-5 h-5">
                             {menuItem.icon}
                         </div>
                         <span>{menuItem.text}</span>
-                    </Link>
+                    </HashLink>
                 );
             })}
         </nav>

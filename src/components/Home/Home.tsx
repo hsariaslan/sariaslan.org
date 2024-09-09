@@ -16,7 +16,7 @@ function Home() {
     const logoSize = 48;
 
     return (
-        <div className="home pt-10 md:pt-24">
+        <div className="home pt-44 md:pt-60" id="home">
             <div className="mx-auto 2xl:w-2/3 w-full flex flex-col-reverse md:flex-row gap-y-10 justify-around items-center gap-x-10">
                 <div className="flex flex-col gap-y-4">
                     <div className="text-6xl flex gap-x-4">
