@@ -66,7 +66,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({menuItems, onLinkClick, isVisibl
                 <nav className="p-4 flex flex-col gap-y-6">
                     {menuItems.map((item, index) => (
                         <div className="block" key={index}>
-                            <HashLink to={item.link} className="block text-gray-700 link-effect" onClick={(e) => onLinkClick(item.link)}>
+                            <HashLink to={item.link} className="block text-gray-700 link-effect" onClick={() => onLinkClick(item.link)}>
                                 {item.text}
                             </HashLink>
                         </div>

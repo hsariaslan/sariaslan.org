@@ -83,7 +83,7 @@ const Header = () => {
     }, [lastScrollY, isLinkClick]);
 
     return (
-        <header className={`py-6 px-1 sm:px-10 flex justify-between fixed z-50 shadow top-0 left-0 w-full h-32 bg-white transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+        <header className={`header ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
             <HashLink to="/#home">
                 <div className="logo-container">
                     <img src="src/assets/images/logo.png" alt="hakan-sariaslan-logo" width="250"/>

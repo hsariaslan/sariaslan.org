@@ -78,7 +78,7 @@ const ConfettiMenu: React.FC<ConfettiMenuProps> = ({menuItems, onLinkClick}) => 
         <nav className="hidden xl:flex items-center justify-between gap-x-4 2xl:gap-x-6 text-2xl">
             {menuItems.map((menuItem, index) => {
                 return (
-                    <HashLink to={menuItem.link} key={index} className="menu-item" onMouseEnter={handleMouseEnter} onClick={(e) => onLinkClick(menuItem.link)}
+                    <HashLink to={menuItem.link} key={index} className="menu-item" onMouseEnter={handleMouseEnter} onClick={() => onLinkClick(menuItem.link)}
                           onMouseLeave={handleMouseLeave}>
                         <div className="w-5 h-5">
                             {menuItem.icon}
