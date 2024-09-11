@@ -5,3 +5,4 @@ export {default as Timeline} from "@/components/Timeline/Timeline";
 export {default as Projects} from "@/components/Projects/Projects";
 export {default as Contact} from "@/components/Contact/Contact";
 export {default as Footer} from "@/components/Footer/Footer";
+export {default as ScrollToTop} from "@/components/ScrollToTop/ScrollToTopButton";

@@ -1,5 +1,5 @@
 import React from "react";
-import {Header, Home, About, Timeline, Projects, Contact, Footer} from "@/components";
+import {Header, Home, About, Timeline, Projects, Contact, Footer, ScrollToTop} from "@/components";
 
 const Main = () => {
     return (
@@ -11,6 +11,7 @@ const Main = () => {
             <Projects/>
             <Contact/>
             <Footer/>
+            <ScrollToTop/>
         </>
     );
 }
