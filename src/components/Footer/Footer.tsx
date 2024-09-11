@@ -1,6 +1,6 @@
 import React from "react";
 
-function About() {
+function Footer() {
     return (
         <div className="bg-stone-700 py-10 text-center text-white">
             Copyright &copy; {new Date().getFullYear()}
@@ -8,4 +8,4 @@ function About() {
     );
 }
 
-export default About;
+export default Footer;
