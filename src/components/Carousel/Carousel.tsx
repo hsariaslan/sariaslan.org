@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 interface CarouselItem {
@@ -13,6 +13,11 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ items }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [currentTranslate, setCurrentTranslate] = useState(0);
+    const [prevTranslate, setPrevTranslate] = useState(0);
+    const carouselRef = useRef<HTMLDivElement>(null);
 
     const handlePrev = () => {
         setCurrentIndex((prevIndex) =>
@@ -30,6 +35,33 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         setCurrentIndex(index);
     };
 
+    const handleTouchStart = (event: React.TouchEvent) => {
+        const touch = event.touches[0];
+        setStartX(touch.clientX);
+        setIsDragging(true);
+        setCurrentTranslate(currentTranslate);
+    };
+
+    const handleTouchMove = (event: React.TouchEvent) => {
+        if (!isDragging) return;
+        const touch = event.touches[0];
+        const diff = touch.clientX - startX;
+        setCurrentTranslate(prevTranslate + diff);
+    };
+
+    const handleTouchEnd = () => {
+        setIsDragging(false);
+        const movedBy = currentTranslate - prevTranslate;
+
+        if (movedBy < -50) {
+            handleNext();
+        } else if (movedBy > 50) {
+            handlePrev();
+        } else {
+            setCurrentTranslate(prevTranslate);
+        }
+    };
+
     useEffect(() => {
         const interval = setInterval(() => {
             handleNext();
@@ -38,11 +70,20 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
         return () => clearInterval(interval);
     }, [currentIndex]);
 
+    useEffect(() => {
+        setPrevTranslate(-currentIndex * 100);
+        setCurrentTranslate(-currentIndex * 100);
+    }, [currentIndex]);
+
     return (
-        <div className="relative w-full mx-auto">
+        <div className="relative w-full mx-auto"
+             ref={carouselRef}
+             onTouchStart={handleTouchStart}
+             onTouchMove={handleTouchMove}
+             onTouchEnd={handleTouchEnd}>
             <div className="overflow-hidden">
                 <div
-                    className="flex transition-transform duration-500"
+                    className="flex transition-transform duration-500 ease-out"
                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
                     {items.map((item, index) => (
