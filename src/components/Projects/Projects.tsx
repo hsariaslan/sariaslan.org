@@ -36,7 +36,7 @@ function Projects() {
                         <h3 className="text-2xl font-light">POS APPLICATION</h3>
                         <p className="font-light text-stone-700">10/2023 - 11/2023</p>
                         <p className="text-justify mt-4 font-light text-stone-700">
-                            Simple pos application build with React, Redux and TailwindCSS.
+                            Simple pos application build with React, Redux, TailwindCSS, Node, Express and MongoDB.
                         </p>
                         <p className="text-justify mt-4 font-light text-stone-700">
                             <a href="https://github.com/hsariaslan/pos-application" target="_blank"
