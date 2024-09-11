@@ -3,7 +3,6 @@ import "./Header.css";
 import {HashLink} from 'react-router-hash-link';
 import { FaTimeline } from "react-icons/fa6";
 import {FaFileCode, FaHome, FaInfoCircle, FaPhone} from "react-icons/fa";
-import {HiPencilSquare} from "react-icons/hi2";
 import BurgerMenu from "@/components/Header/BurgerMenu";
 import ConfettiMenu from "@/components/Header/ConfettiMenu";
 
@@ -33,11 +32,6 @@ const menuItems: IMenuItemsProps[] = [
         link: '/#projects',
         text: 'Projects',
         icon: <FaFileCode className="menu-item-icon" size={20}/>,
-    },
-    {
-        link: '/#blog',
-        text: 'Blog',
-        icon: <HiPencilSquare className="menu-item-icon" size={20}/>,
     },
     {
         link: '/#contact',

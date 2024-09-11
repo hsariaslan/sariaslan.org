@@ -28,7 +28,7 @@ function Projects() {
 
     return (
         <div className="bg-white py-20 mt-32">
-            <motion.div initial={{opacity: 0, x: 100}} whileInView={{opacity: 1, x: 0}} viewport={{once: true}}
+            <motion.div initial={{opacity: 0, x: -100}} whileInView={{opacity: 1, x: 0}} viewport={{once: true}}
                         transition={{delay: 0.2}} id="projects" className="sm:pl-10 px-4 mx-auto 2xl:w-2/3 w-full">
                 <h1 className="text-4xl font-light">MY PROJECTS</h1>
                 <div className="lg:flex lg:gap-x-10 mt-10">
