@@ -16,21 +16,21 @@ function Contact() {
                         I'm ready to hear from you!
                     </p>
                     <div className="flex flex-col gap-y-4 sm:flex-row sm:gap-x-20">
-                        <p className="text-lg font-light leading-6 flex gap-x-4 items-center">
+                        <div className="text-lg font-light leading-6 flex gap-x-4 items-center">
                             <FaMapLocationDot size={40} className="text-stone-700"/>
                             <div className="flex flex-col">
                                 <span className="font-bold">Location</span>
                                 <span>Denizli, Turkey</span>
                             </div>
-                        </p>
-                        <p className="text-lg font-light leading-6 flex gap-x-4 items-center">
+                        </div>
+                        <div className="text-lg font-light leading-6 flex gap-x-4 items-center">
                             <IoMdMailUnread size={40} className="text-stone-700"/>
                             <div className="flex flex-col">
                                 <span className="font-bold">Mail</span>
                                 <a href="mailto:hakan.sariaslan.job@gmail.com"
                                    className="hover:text-primary">hakan.sariaslan.job@gmail.com</a>
                             </div>
-                        </p>
+                        </div>
                         <a href="https://www.linkedin.com/in/hakan-sariaslan/" target="_blank" title="LinkedIn"
                            className="text-lg font-light leading-6 flex gap-x-2 items-center hover:text-primary">
                             <FaLinkedin size={40} className="text-stone-700"/>
