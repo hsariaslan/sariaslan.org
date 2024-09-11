@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import {motion} from "framer-motion"
 import {Link} from "react-router-dom";
 import {FaAws, FaAtlassian, FaCss3Alt, FaDocker, FaGithub, FaHtml5, FaLinkedin, FaVuejs} from "react-icons/fa";
 import {SiPhp} from "react-icons/si";
@@ -14,6 +15,23 @@ import {SiExpress} from "react-icons/si";
 
 function Home() {
     const logoSize = 48;
+
+    const container = {
+        visible: {
+            transition: {
+                delayChildren: 0.3,
+                staggerChildren: 0.1
+            }
+        }
+    }
+
+    const item = {
+        hidden: { y: -5, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1
+        }
+    }
 
     return (
         <div className="home pt-44 md:pt-60" id="home">
@@ -49,42 +67,42 @@ function Home() {
                 <div className="flex flex-col text-center justify-center gap-y-10 xl:flex-row xl:justify-around items-center mt-12">
                     <div>
                         <div className="text-2xl font-light">Languages</div>
-                        <div className="techs">
-                            <SiPhp size={logoSize} title="PHP"/>
-                            <RiJavascriptFill size={logoSize} title="Javascript"/>
-                            <BiLogoTypescript size={logoSize} title="Typescript"/>
-                            <FaCss3Alt size={logoSize} title="CSS 3"/>
-                            <FaHtml5 size={logoSize} title="HTML 5"/>
-                        </div>
+                        <motion.div initial="hidden" animate="visible" variants={container} className="techs">
+                            <motion.div variants={item}><SiPhp size={logoSize} title="PHP"/></motion.div>
+                            <motion.div variants={item}><RiJavascriptFill size={logoSize} title="Javascript"/></motion.div>
+                            <motion.div variants={item}><BiLogoTypescript size={logoSize} title="Typescript"/></motion.div>
+                            <motion.div variants={item}><FaCss3Alt size={logoSize} title="CSS 3"/></motion.div>
+                            <motion.div variants={item}><FaHtml5 size={logoSize} title="HTML 5"/></motion.div>
+                        </motion.div>
                     </div>
                     <div>
                         <div className="text-2xl font-light">Libraries / Frameworks</div>
-                        <div className="techs flex-wrap">
-                            <IoLogoLaravel size={logoSize} title="Laravel"/>
-                            <RiReactjsLine size={logoSize} title="React JS"/>
-                            <RiTailwindCssFill size={logoSize} title="TailwindCSS"/>
-                            <FaVuejs size={logoSize} title="Vue JS"/>
-                            <TbBrandNodejs size={logoSize} title="Node JS"/>
-                            <SiExpress size={logoSize} title="Express JS"/>
-                            <DiJqueryLogo size={logoSize} title="Jquery"/>
-                            <DiYii size={logoSize - 8} title="Yii2"/>
-                        </div>
+                        <motion.div initial="hidden" animate="visible" variants={container} className="techs flex-wrap">
+                            <motion.div variants={item}><IoLogoLaravel size={logoSize} title="Laravel"/></motion.div>
+                            <motion.div variants={item}><RiReactjsLine size={logoSize} title="React JS"/></motion.div>
+                            <motion.div variants={item}><RiTailwindCssFill size={logoSize} title="TailwindCSS"/></motion.div>
+                            <motion.div variants={item}><FaVuejs size={logoSize} title="Vue JS"/></motion.div>
+                            <motion.div variants={item}><TbBrandNodejs size={logoSize} title="Node JS"/></motion.div>
+                            <motion.div variants={item}><SiExpress size={logoSize} title="Express JS"/></motion.div>
+                            <motion.div variants={item}><DiJqueryLogo size={logoSize} title="Jquery"/></motion.div>
+                            <motion.div variants={item}><DiYii size={logoSize - 8} title="Yii2"/></motion.div>
+                        </motion.div>
                     </div>
                     <div>
                         <div className="text-2xl font-light">Databases</div>
-                        <div className="techs">
-                            <GrMysql size={logoSize - 8} title="Mysql"/>
-                            <DiRedis size={logoSize} title="Redis"/>
-                            <SiMongodb size={logoSize - 8} title="MongoDB"/>
-                        </div>
+                        <motion.div initial="hidden" animate="visible" variants={container} className="techs">
+                            <motion.div variants={item}><GrMysql size={logoSize - 8} title="Mysql"/></motion.div>
+                            <motion.div variants={item}><DiRedis size={logoSize} title="Redis"/></motion.div>
+                            <motion.div variants={item}><SiMongodb size={logoSize - 8} title="MongoDB"/></motion.div>
+                        </motion.div>
                     </div>
                     <div>
                         <div className="text-2xl font-light">DevOps Tools</div>
-                        <div className="techs">
-                            <FaDocker size={logoSize} title="Docker"/>
-                            <FaAws size={logoSize} title="AWS"/>
-                            <FaAtlassian size={logoSize - 8} title="Atlassian"/>
-                        </div>
+                        <motion.div initial="hidden" animate="visible" variants={container} className="techs">
+                            <motion.div variants={item}><FaDocker size={logoSize} title="Docker"/></motion.div>
+                            <motion.div variants={item}><FaAws size={logoSize} title="AWS"/></motion.div>
+                            <motion.div variants={item}><FaAtlassian size={logoSize - 8} title="Atlassian"/></motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
